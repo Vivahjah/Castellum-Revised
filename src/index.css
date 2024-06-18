@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    @apply w-5 h-5 border-2 border-white border-t-primary rounded-full inline-block box-border;
+    animation: rotation 1s linear infinite;
+}
