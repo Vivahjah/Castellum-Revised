@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import validator from 'validator';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import Loader from "../../GeneralComponents/Loader"; // Adjust the path as needed
-import axios from "axios";
+import Loader from "../../../GeneralComponents/Loader"; 
 import { useNavigate } from "react-router-dom";
+import { addItemToLocalStorage } from "../../../HelperFunctions/UseLocalStorage";
+import api from "../../../Services/axios";
 
 const login = async ({ email, password }) => {
-  const response = await axios.post('https://castellum-mvp.azurewebsites.net/api/users/login/', {
+  const response = await api.post(`/api/users/login/`, {
     email,
     password,
   });
@@ -33,6 +34,8 @@ const Login = () => {
             // Navigate to a employee Page later
             navigate('/');
           }
+
+          addItemToLocalStorage('token', data?.access)
       },
       onError: (error) => {
         console.error('Login failed:', error);
