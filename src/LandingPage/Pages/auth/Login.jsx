@@ -47,7 +47,7 @@ const Login = () => {
     e.preventDefault();
     setSubmitted(true);
     if (!email || !password || !validator.isEmail(email)) {
-      return toast.warning("Email field or Password field is not correctly filled");
+      return toast.warning("Email field or Password field is empty or not correctly filled");
     }
     mutation.mutate({ email, password });
   };
@@ -69,7 +69,7 @@ const Login = () => {
             className="w-full px-3 py-4 border border-subtleText rounded-md outline-none text-text text-sm"
             
           />
-          <p className={ !email && submitted ? "text-[0.9rem] text-primary mt-1" : "invisible"}>
+          <p className={ !email   && submitted ? "text-[0.9rem] text-primary mt-1" : "invisible"}>
             Invalid email or email field empty
           </p>
         </div>
