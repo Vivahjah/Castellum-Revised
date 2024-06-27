@@ -7,8 +7,9 @@ import { RiDashboardFill } from "react-icons/ri";
 import BigLogo from "../../../assets/Logo.svg"
 import SmallLogo from "../../../assets/smallLogo.svg"
 import { Link } from "react-router-dom";
-import { useSelector , useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { SET_SELECTED_SIDEBAR_TAB, TOGGLE_SIDEBAR } from "../../AdminRedux/AdminDeviceSlice";
+
 
 const Menu = [
   { title: "Dashboard", icon: <RiDashboardFill /> },
@@ -27,9 +28,9 @@ const AdminSidebar = () => {
 
 
   const { selectedSideBarTab, isSidebarOpen } = useSelector(state => (state.AdminDeviceSlice));
-  
 
- 
+
+
   return (
 
     <div
@@ -38,12 +39,13 @@ const AdminSidebar = () => {
 
 
       <Link to="/admin/dashboard">
-      <div className="mb-16 h-16">
-        {isSidebarOpen ? <img src={BigLogo} alt="cast-big"  /> : <img src={SmallLogo} alt="cast-big" />}
+        <div className="mb-16 h-16">
+          {isSidebarOpen ? <img src={BigLogo} alt="cast-big" /> : <img src={SmallLogo} alt="cast-big" />}
 
-      </div>
+        </div>
 
       </Link>
+
 
       <ul className="pt-2">
         {Menu.map((menu, index) => (

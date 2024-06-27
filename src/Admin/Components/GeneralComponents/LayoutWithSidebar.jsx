@@ -8,10 +8,10 @@ const LayoutWithSidebar = () => {
   const { isSidebarOpen } = useSelector(state => (state.AdminDeviceSlice));
   return (
     <div className='bg-accent'>
-      <div className="fixed">
+      <div className="fixed z-10">
         <AdminNavbar />
       </div>
-      <div className="fixed bg-primary">
+      <div className="fixed z-20 bg-primary">
         <AdminSidebar />
       </div>
       <div className={`${isSidebarOpen ? "pl-60" : "pl-20"} duration-300`}>
