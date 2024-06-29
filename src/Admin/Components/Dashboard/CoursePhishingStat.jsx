@@ -10,6 +10,7 @@ import TrainingAndAssessments from "./TrainingAndAssessments";
 
 
 
+
 const CoursePhishingStat = () => {
 
     const [numberOfDay, setNumberOfDays] = useState("last_30_days")
@@ -68,9 +69,7 @@ const CoursePhishingStat = () => {
                 </div>
                 }
             </div>}
-            <div className="w-full flex justify-between gap-4 mb-12">
-
-            </div>
+           
         </div>
     )
 }

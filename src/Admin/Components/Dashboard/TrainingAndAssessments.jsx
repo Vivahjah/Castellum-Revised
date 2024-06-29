@@ -1,4 +1,4 @@
-
+/* eslint-disable react/prop-types */
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const TrainingAndAssessments = ({ data }) => {
